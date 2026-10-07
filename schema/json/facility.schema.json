@@ -1,0 +1,88 @@
+{
+  "$ref": "#/definitions/Facility",
+  "definitions": {
+    "Facility": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^FAC-[A-Z0-9_-]+$"
+        },
+        "name": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "propertyNames": {
+            "enum": [
+              "en",
+              "vi",
+              "ko"
+            ]
+          }
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "string",
+              "minLength": 1
+            },
+            "city": {
+              "type": "string",
+              "minLength": 1
+            },
+            "country": {
+              "type": "string",
+              "minLength": 1
+            },
+            "postal_code": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "street",
+            "city",
+            "country"
+          ],
+          "additionalProperties": false
+        },
+        "timezone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locales": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "en",
+              "vi",
+              "ko"
+            ]
+          },
+          "minItems": 1
+        },
+        "default_locale": {
+          "$ref": "#/definitions/Facility/properties/locales/items"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "address",
+        "timezone",
+        "locales",
+        "default_locale",
+        "created_at"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

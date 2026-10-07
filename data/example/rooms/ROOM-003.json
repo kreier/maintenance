@@ -1,0 +1,16 @@
+{
+  "id": "ROOM-003",
+  "facility_id": "FAC-DEMO-001",
+  "name": {
+    "en": "Electrical & Utility Room",
+    "vi": "Phòng kỹ thuật điện",
+    "ko": "전기 및 설비실"
+  },
+  "floor": "Basement",
+  "area_sqm": 28,
+  "description": {
+    "en": "Restricted access utility room housing electrical switchboards and water pumps.",
+    "vi": "Phòng kỹ thuật hạn chế ra vào chứa tủ điện chính và máy bơm.",
+    "ko": "주 배전반과 펌프가 있는 출입 제한 설비실."
+  }
+}

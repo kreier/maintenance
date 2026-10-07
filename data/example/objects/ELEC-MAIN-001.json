@@ -1,0 +1,41 @@
+{
+  "id": "ELEC-MAIN-001",
+  "type": "utility",
+  "category": "electrical",
+  "facility_id": "FAC-DEMO-001",
+  "room_id": "ROOM-003",
+  "name": {
+    "en": {
+      "text": "Main Low Voltage Switchboard",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-01-15T08:00:00Z"
+    },
+    "vi": {
+      "text": "Tủ điện phân phối chính hạ thế",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-01-16T10:00:00Z"
+    },
+    "ko": {
+      "text": "메인 저압 배전반",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-01-17T11:00:00Z"
+    }
+  },
+  "manufacturer": "Schneider Electric",
+  "model": "PrismaSeT G",
+  "serial_number": "SE-2023-99120",
+  "installed": "2024-01-15",
+  "status": "active",
+  "maintenance": {
+    "interval_months": 12,
+    "last_serviced": "2025-11-10"
+  },
+  "documents": [
+    {
+      "id": "DOC-DWG-001",
+      "title": "Single Line Electrical Diagram",
+      "filename": "electrical_single_line_v2.pdf",
+      "content_type": "application/pdf"
+    }
+  ]
+}

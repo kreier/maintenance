@@ -1,0 +1,34 @@
+{
+  "id": "FIRE-AUD-001",
+  "type": "equipment",
+  "category": "safety",
+  "facility_id": "FAC-DEMO-001",
+  "room_id": "ROOM-001",
+  "name": {
+    "en": {
+      "text": "Auditorium Stage CO2 Fire Extinguisher",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-02-01T10:00:00Z"
+    },
+    "vi": {
+      "text": "Bình chữa cháy CO2 sân khấu hội trường",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-02-02T11:00:00Z"
+    },
+    "ko": {
+      "text": "강당 무대 CO2 소화기",
+      "status": "AI-PROPOSED",
+      "updated_at": "2024-02-02T11:05:00Z"
+    }
+  },
+  "manufacturer": "Yamato Protec",
+  "model": "YC-5XII",
+  "serial_number": "YP-CO2-5502",
+  "installed": "2024-02-01",
+  "status": "maintenance_required",
+  "maintenance": {
+    "interval_months": 6,
+    "last_serviced": "2025-06-01"
+  },
+  "documents": []
+}

@@ -1,0 +1,51 @@
+{
+  "$ref": "#/definitions/LocalizedField",
+  "definitions": {
+    "LocalizedField": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "DRAFT",
+                "AI-PROPOSED",
+                "HUMAN-APPROVED"
+              ]
+            },
+            "updated_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reviewed_by": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "text",
+            "status",
+            "updated_at"
+          ],
+          "additionalProperties": false
+        },
+        "vi": {
+          "$ref": "#/definitions/LocalizedField/properties/en"
+        },
+        "ko": {
+          "$ref": "#/definitions/LocalizedField/properties/en"
+        }
+      },
+      "required": [
+        "en"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,163 @@
+{
+  "$ref": "#/definitions/MaintenanceEvent",
+  "definitions": {
+    "MaintenanceEvent": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^EVT-\\d{4}-\\d{4}$"
+        },
+        "facility_id": {
+          "type": "string",
+          "pattern": "^FAC-[A-Z0-9_-]+$"
+        },
+        "object_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]+-[A-Z0-9]+-[A-Z0-9]+$"
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "inspection",
+            "service",
+            "repair",
+            "replacement"
+          ]
+        },
+        "performed_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "DRAFT",
+                    "AI-PROPOSED",
+                    "HUMAN-APPROVED"
+                  ]
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "reviewed_by": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text",
+                "status",
+                "updated_at"
+              ],
+              "additionalProperties": false
+            },
+            "vi": {
+              "$ref": "#/definitions/MaintenanceEvent/properties/summary/properties/en"
+            },
+            "ko": {
+              "$ref": "#/definitions/MaintenanceEvent/properties/summary/properties/en"
+            }
+          },
+          "required": [
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "notes": {
+          "type": "string"
+        },
+        "cost": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "number",
+              "minimum": 0
+            },
+            "currency": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 3
+            }
+          },
+          "required": [
+            "amount",
+            "currency"
+          ],
+          "additionalProperties": false
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^DOC-[A-Z0-9_-]+$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "filename": {
+                "type": "string",
+                "minLength": 1
+              },
+              "content_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "size_bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "minLength": 64,
+                "maxLength": 64
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "filename",
+              "content_type"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "facility_id",
+        "object_id",
+        "date",
+        "type",
+        "performed_by",
+        "summary",
+        "created_at"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

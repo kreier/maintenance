@@ -1,0 +1,41 @@
+{
+  "id": "AV-AUD-001",
+  "type": "equipment",
+  "category": "av",
+  "facility_id": "FAC-DEMO-001",
+  "room_id": "ROOM-001",
+  "name": {
+    "en": {
+      "text": "Main Auditorium 4K Laser Projector (12,000 Lumens)",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2026-05-10T12:00:00Z"
+    },
+    "vi": {
+      "text": "Máy chiếu laser hội trường",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-03-01T10:00:00Z"
+    },
+    "ko": {
+      "text": "메인 강당 4K 레이저 프로젝터",
+      "status": "AI-PROPOSED",
+      "updated_at": "2024-03-01T10:05:00Z"
+    }
+  },
+  "manufacturer": "Panasonic",
+  "model": "PT-MZ16KL",
+  "serial_number": "PA-PROJ-8819",
+  "installed": "2024-03-01",
+  "status": "active",
+  "maintenance": {
+    "interval_months": 12,
+    "last_serviced": "2026-03-01"
+  },
+  "documents": [
+    {
+      "id": "DOC-MAN-002",
+      "title": "Operating Instructions and Filter Cleaning Guide",
+      "filename": "panasonic_pt_mz16kl_guide.pdf",
+      "content_type": "application/pdf"
+    }
+  ]
+}

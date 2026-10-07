@@ -1,0 +1,16 @@
+{
+  "id": "ROOM-002",
+  "facility_id": "FAC-DEMO-001",
+  "name": {
+    "en": "Seminar Room 2",
+    "vi": "Phòng hội thảo 2",
+    "ko": "세미나실 2"
+  },
+  "floor": "1st Floor",
+  "area_sqm": 45,
+  "description": {
+    "en": "Multipurpose workshop room with modular furniture.",
+    "vi": "Phòng hội thảo đa năng với bàn ghế di động.",
+    "ko": "모듈형 가구가 있는 다목적 워크숍 룸."
+  }
+}

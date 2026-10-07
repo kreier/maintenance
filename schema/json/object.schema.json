@@ -1,0 +1,177 @@
+{
+  "$ref": "#/definitions/FacilityObject",
+  "definitions": {
+    "FacilityObject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]+-[A-Z0-9]+-[A-Z0-9]+$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "equipment",
+            "structural",
+            "utility"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "hvac",
+            "electrical",
+            "plumbing",
+            "av",
+            "safety",
+            "other"
+          ]
+        },
+        "facility_id": {
+          "type": "string",
+          "pattern": "^FAC-[A-Z0-9_-]+$"
+        },
+        "room_id": {
+          "type": "string",
+          "pattern": "^ROOM-[A-Z0-9_-]+$"
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "en": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "DRAFT",
+                    "AI-PROPOSED",
+                    "HUMAN-APPROVED"
+                  ]
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "reviewed_by": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text",
+                "status",
+                "updated_at"
+              ],
+              "additionalProperties": false
+            },
+            "vi": {
+              "$ref": "#/definitions/FacilityObject/properties/name/properties/en"
+            },
+            "ko": {
+              "$ref": "#/definitions/FacilityObject/properties/name/properties/en"
+            }
+          },
+          "required": [
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "serial_number": {
+          "type": "string"
+        },
+        "installed": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "maintenance_required",
+            "out_of_service",
+            "retired"
+          ]
+        },
+        "maintenance": {
+          "type": "object",
+          "properties": {
+            "interval_months": {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            },
+            "last_serviced": {
+              "$ref": "#/definitions/FacilityObject/properties/installed"
+            }
+          },
+          "required": [
+            "interval_months"
+          ],
+          "additionalProperties": false
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^DOC-[A-Z0-9_-]+$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "filename": {
+                "type": "string",
+                "minLength": 1
+              },
+              "content_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "size_bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "minLength": 64,
+                "maxLength": 64
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "filename",
+              "content_type"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "category",
+        "facility_id",
+        "room_id",
+        "name",
+        "installed",
+        "status"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

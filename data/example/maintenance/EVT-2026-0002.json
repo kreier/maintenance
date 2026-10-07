@@ -1,0 +1,28 @@
+{
+  "id": "EVT-2026-0002",
+  "facility_id": "FAC-DEMO-001",
+  "object_id": "AV-AUD-001",
+  "date": "2026-03-01",
+  "type": "inspection",
+  "performed_by": "Internal AV Committee",
+  "summary": {
+    "en": {
+      "text": "Annual optical system inspection, dust filter vacuuming, and color calibration.",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2026-03-01T15:00:00Z"
+    },
+    "vi": {
+      "text": "Kiểm tra hệ thống quang học hàng năm, hút bụi màng lọc và cân chỉnh màu sắc.",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2026-03-01T15:30:00Z"
+    },
+    "ko": {
+      "text": "연간 광학 시스템 점검, 먼지 필터 청소 및 색상 보정.",
+      "status": "AI-PROPOSED",
+      "updated_at": "2026-03-01T15:35:00Z"
+    }
+  },
+  "notes": "Laser diode hours: 1,420 hrs. Image quality and brightness within factory tolerance.",
+  "documents": [],
+  "created_at": "2026-03-01T16:00:00Z"
+}

@@ -1,0 +1,61 @@
+{
+  "$ref": "#/definitions/Room",
+  "definitions": {
+    "Room": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ROOM-[A-Z0-9_-]+$"
+        },
+        "facility_id": {
+          "type": "string",
+          "pattern": "^FAC-[A-Z0-9_-]+$"
+        },
+        "name": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "propertyNames": {
+            "enum": [
+              "en",
+              "vi",
+              "ko"
+            ]
+          }
+        },
+        "floor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "area_sqm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "description": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "propertyNames": {
+            "enum": [
+              "en",
+              "vi",
+              "ko"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "facility_id",
+        "name",
+        "floor"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

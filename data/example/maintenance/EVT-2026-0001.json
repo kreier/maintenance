@@ -1,0 +1,39 @@
+{
+  "id": "EVT-2026-0001",
+  "facility_id": "FAC-DEMO-001",
+  "object_id": "HVAC-ROOM2-001",
+  "date": "2026-08-15",
+  "type": "service",
+  "performed_by": "Da Nang HVAC Services Co.",
+  "summary": {
+    "en": {
+      "text": "Semi-annual preventative maintenance: coil cleaning, refrigerant pressure check, and filter replacement.",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2026-08-15T16:00:00Z"
+    },
+    "vi": {
+      "text": "Bảo dưỡng định kỳ 6 tháng: vệ sinh dàn lạnh, kiểm tra áp suất ga và thay lưới lọc.",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2026-08-15T16:15:00Z"
+    },
+    "ko": {
+      "text": "반기 예방 정비: 코일 청소, 냉매 압력 점검 및 필터 교체.",
+      "status": "AI-PROPOSED",
+      "updated_at": "2026-08-15T16:20:00Z"
+    }
+  },
+  "notes": "Coil cleaned thoroughly; operating current verified at 4.2A.",
+  "cost": {
+    "amount": 750000,
+    "currency": "VND"
+  },
+  "documents": [
+    {
+      "id": "DOC-INV-001",
+      "title": "Service Invoice & Report #DN-8812",
+      "filename": "invoice_service_hvac_20260815.pdf",
+      "content_type": "application/pdf"
+    }
+  ],
+  "created_at": "2026-08-15T16:30:00Z"
+}

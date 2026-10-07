@@ -8,8 +8,8 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 
 | Phase | Title | Focus Area | Status |
 | :--- | :--- | :--- | :--- |
-| **Phase 1** | **Foundation** | Repository layout, schema definitions, synthetic fixture, seed script, CI | 🟡 **In Progress** |
-| **Phase 2** | **Objects** | Physical facilities, rooms, equipment records, stable IDs, relationships | ⚪ Pending |
+| **Phase 1** | **Foundation** | Repository layout, schema definitions, synthetic fixture, seed script, CI | 🟢 **Complete** |
+| **Phase 2** | **Objects** | Physical facilities, rooms, equipment records, stable IDs, relationships | 🟡 **Next Up** |
 | **Phase 3** | **Maintenance** | Events, service intervals, age calculation, overdue alerts, dashboard UI | ⚪ Pending |
 | **Phase 4** | **Worker & Auth** | Cloudflare Worker, Turnstile, session cookies, roles, private R2 proxy | ⚪ Pending |
 | **Phase 5** | **Documents** | File upload/download streaming, metadata tracking, versioned history | ⚪ Pending |
@@ -22,16 +22,16 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 
 ## 📌 Detailed Phase Specifications
 
-### Phase 1 — Foundation (Current Target)
+### Phase 1 — Foundation (Completed)
 **Goal**: Establish a robust, reproducible development environment and canonical data contracts.
 - [x] Operational agent guidelines ([AGENTS.md](file:///home/mk/AI-Agents/antigravity/maintenance/AGENTS.md))
 - [x] Architecture design specification ([ARCHITECTURE.md](file:///home/mk/AI-Agents/antigravity/maintenance/ARCHITECTURE.md))
 - [x] Phased roadmap ([ROADMAP.md](file:///home/mk/AI-Agents/antigravity/maintenance/ROADMAP.md))
-- [ ] Core directory structure (`app/`, `worker/`, `schema/`, `data/example/`, `scripts/`)
-- [ ] Canonical Zod schemas for Facility, Room, Equipment, Maintenance, and Translations
-- [ ] Synthetic example dataset (`data/example/`) serving as public demo and CI test fixture
-- [ ] Validation and seed script (`scripts/seed.ts` / `scripts/validate.ts`)
-- [ ] GitHub Actions CI workflow to validate schemas and synthetic data on PRs
+- [x] Core directory structure (`app/`, `worker/`, `schema/`, `data/example/`, `scripts/`)
+- [x] Canonical Zod schemas for Facility, Room, Equipment, Maintenance, and Translations
+- [x] Synthetic example dataset (`data/example/`) serving as public demo and CI test fixture
+- [x] Validation and seed script (`scripts/seed.ts` / `scripts/validate.ts`)
+- [x] GitHub Actions CI workflow to validate schemas and synthetic data on PRs
 
 ### Phase 2 — Objects
 **Goal**: Model physical assets deterministically with stable IDs.

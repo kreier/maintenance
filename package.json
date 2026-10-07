@@ -1,0 +1,24 @@
+{
+  "name": "kreier-maintenance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Open-source multilingual facility documentation and maintenance tracking system",
+  "workspaces": [
+    "schema",
+    "app",
+    "worker"
+  ],
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "generate:schemas": "tsx schema/src/export-json-schemas.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -b && tsc -p scripts/tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

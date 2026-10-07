@@ -1,0 +1,16 @@
+{
+  "id": "ROOM-001",
+  "facility_id": "FAC-DEMO-001",
+  "name": {
+    "en": "Main Auditorium",
+    "vi": "Hội trường chính",
+    "ko": "메인 강당"
+  },
+  "floor": "Ground Floor",
+  "area_sqm": 250,
+  "description": {
+    "en": "Central conference and presentation hall with fixed seating for 180 people.",
+    "vi": "Hội trường trung tâm với 180 chỗ ngồi cố định.",
+    "ko": "180석 고정 좌석이 있는 중앙 컨퍼런스 홀."
+  }
+}
