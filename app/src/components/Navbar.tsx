@@ -48,6 +48,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 Equipment
               </a>
+              <a
+                href="#/maintenance"
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                  activePath.startsWith("/maintenance")
+                    ? "bg-slate-100 text-slate-900 font-semibold"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                }`}
+              >
+                Maintenance
+              </a>
             </nav>
           </div>
 

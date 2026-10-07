@@ -10,8 +10,8 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Foundation** | Repository layout, schema definitions, synthetic fixture, seed script, CI | 🟢 **Complete** |
 | **Phase 2** | **Objects** | Physical facilities, rooms, equipment records, stable IDs, relationships | 🟢 **Complete** |
-| **Phase 3** | **Maintenance** | Events, service intervals, age calculation, overdue alerts, dashboard UI | 🟡 **Next Up** |
-| **Phase 4** | **Worker & Auth** | Cloudflare Worker, Turnstile, session cookies, roles, private R2 proxy | ⚪ Pending |
+| **Phase 3** | **Maintenance** | Events, service intervals, age calculation, overdue alerts, dashboard UI | 🟢 **Complete** |
+| **Phase 4** | **Worker & Auth** | Cloudflare Worker, Turnstile, session cookies, roles, private R2 proxy | 🟡 **Next Up** |
 | **Phase 5** | **Documents** | File upload/download streaming, metadata tracking, versioned history | ⚪ Pending |
 | **Phase 6** | **Translations** | Locale fields (EN/VI/KO), review workflow (`HUMAN-APPROVED`), stale check | ⚪ Pending |
 | **Phase 7** | **Audit & Backup** | Append-only audit records, R2 manifests, admin Google Drive backup | ⚪ Pending |
@@ -40,14 +40,15 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 - [x] Implement search and filtering across categories (HVAC, Electrical, Plumbing, Structural, AV, Safety).
 - [x] Provide stable deep links to individual object IDs (e.g. `#/objects/HVAC-ROOM2-001`).
 
-### Phase 3 — Maintenance
+### Phase 3 — Maintenance (Completed)
 **Goal**: Compute ages, schedules, and maintenance statuses dynamically from raw dates.
-- Implement date calculation engine (calculates precise equipment age, next maintenance date, and days overdue).
-- Implement maintenance event logging data structure (inspection, service, repair, replacement).
-- Build the maintenance dashboard:
-  - Overdue items highlighted in warning/danger states.
-  - Upcoming maintenance calendar / list for the next 30/60/90 days.
-  - Interactive graphs (e.g., equipment age distribution, service history).
+- [x] Implement date calculation engine (calculates precise equipment age, next maintenance date, and days overdue).
+- [x] Implement maintenance event logging data structure (inspection, service, repair, replacement).
+- [x] Build the maintenance dashboard:
+  - [x] Overdue items highlighted in warning/danger states.
+  - [x] Upcoming maintenance calendar / list for the next 30/60/90 days.
+  - [x] Interactive graphs (equipment age distribution, service forecast, facility energy consumption).
+  - [x] Interactive service recording simulator with real-time recalculation.
 
 ### Phase 4 — Cloudflare Worker & Authentication
 **Goal**: Establish the authoritative security layer and connect to Cloudflare R2.

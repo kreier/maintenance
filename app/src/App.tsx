@@ -5,6 +5,7 @@ import { FacilityOverviewPage } from "./pages/FacilityOverviewPage";
 import { EquipmentListPage } from "./pages/EquipmentListPage";
 import { ObjectDetailPage } from "./pages/ObjectDetailPage";
 import { RoomDetailPage } from "./pages/RoomDetailPage";
+import { MaintenanceDashboardPage } from "./pages/MaintenanceDashboardPage";
 
 export const App: React.FC = () => {
   const [currentLocale, setCurrentLocale] = useState<LocaleCode>("en");
@@ -30,6 +31,10 @@ export const App: React.FC = () => {
 
     if (normalizedPath === "/equipment") {
       return <EquipmentListPage currentLocale={currentLocale} />;
+    }
+
+    if (normalizedPath === "/maintenance") {
+      return <MaintenanceDashboardPage currentLocale={currentLocale} />;
     }
 
     if (normalizedPath.startsWith("/objects/")) {

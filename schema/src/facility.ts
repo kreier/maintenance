@@ -1,6 +1,12 @@
 import { z } from "zod";
 import { LocaleCodeSchema } from "./translation.js";
 
+export const MonthlyEnergyRecordSchema = z.object({
+  month: z.string().regex(/^\d{4}-\d{2}$/, "Month must be in YYYY-MM format"),
+  kwh: z.number().nonnegative(),
+});
+export type MonthlyEnergyRecord = z.infer<typeof MonthlyEnergyRecordSchema>;
+
 /**
  * Facility configuration schema.
  */
@@ -16,6 +22,7 @@ export const FacilitySchema = z.object({
   timezone: z.string().min(1, "Timezone is required (e.g. Asia/Ho_Chi_Minh)"),
   locales: z.array(LocaleCodeSchema).min(1, "At least one locale must be configured"),
   default_locale: LocaleCodeSchema,
+  energy_consumption: z.array(MonthlyEnergyRecordSchema).optional(),
   created_at: z.string().datetime(),
 });
 

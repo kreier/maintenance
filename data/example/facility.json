@@ -13,5 +13,19 @@
   "timezone": "Asia/Ho_Chi_Minh",
   "locales": ["en", "vi", "ko"],
   "default_locale": "en",
+  "energy_consumption": [
+    { "month": "2025-11", "kwh": 3120 },
+    { "month": "2025-12", "kwh": 3450 },
+    { "month": "2026-01", "kwh": 2980 },
+    { "month": "2026-02", "kwh": 2840 },
+    { "month": "2026-03", "kwh": 3310 },
+    { "month": "2026-04", "kwh": 3950 },
+    { "month": "2026-05", "kwh": 4620 },
+    { "month": "2026-06", "kwh": 5180 },
+    { "month": "2026-07", "kwh": 5420 },
+    { "month": "2026-08", "kwh": 5290 },
+    { "month": "2026-09", "kwh": 4380 },
+    { "month": "2026-10", "kwh": 3760 }
+  ],
   "created_at": "2024-01-10T00:00:00Z"
 }
