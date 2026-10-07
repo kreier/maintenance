@@ -1,0 +1,41 @@
+{
+  "id": "HVAC-ROOM2-001",
+  "type": "equipment",
+  "category": "hvac",
+  "facility_id": "FAC-DEMO-001",
+  "room_id": "ROOM-002",
+  "name": {
+    "en": {
+      "text": "Secondary Room Air Conditioner",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-06-15T09:00:00Z"
+    },
+    "vi": {
+      "text": "Máy lạnh phòng thứ hai",
+      "status": "HUMAN-APPROVED",
+      "updated_at": "2024-06-16T14:30:00Z"
+    },
+    "ko": {
+      "text": "보조실 에어컨",
+      "status": "AI-PROPOSED",
+      "updated_at": "2024-06-16T14:35:00Z"
+    }
+  },
+  "manufacturer": "Daikin",
+  "model": "FTKF35",
+  "serial_number": "DK-2024-09871",
+  "installed": "2024-06-15",
+  "status": "active",
+  "maintenance": {
+    "interval_months": 6,
+    "last_serviced": "2026-08-15"
+  },
+  "documents": [
+    {
+      "id": "DOC-MAN-001",
+      "title": "Daikin FTKF35 Service Manual",
+      "filename": "daikin_ftkf35_manual.pdf",
+      "content_type": "application/pdf"
+    }
+  ]
+}

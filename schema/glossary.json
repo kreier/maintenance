@@ -1,0 +1,36 @@
+{
+  "$schema": "./glossary.schema.json",
+  "version": "1.0.0",
+  "terms": {
+    "air_conditioner": {
+      "en": "Air Conditioner",
+      "vi": "Máy lạnh",
+      "ko": "에어컨"
+    },
+    "circuit_breaker": {
+      "en": "Circuit Breaker",
+      "vi": "Cầu dao điện",
+      "ko": "차단기"
+    },
+    "fire_extinguisher": {
+      "en": "Fire Extinguisher",
+      "vi": "Bình chữa cháy",
+      "ko": "소화기"
+    },
+    "projector": {
+      "en": "Projector",
+      "vi": "Máy chiếu",
+      "ko": "프로젝터"
+    },
+    "emergency_exit": {
+      "en": "Emergency Exit",
+      "vi": "Lối thoát hiểm",
+      "ko": "비상구"
+    },
+    "water_pump": {
+      "en": "Water Pump",
+      "vi": "Máy bơm nước",
+      "ko": "수중 펌프"
+    }
+  }
+}
