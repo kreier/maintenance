@@ -10,10 +10,11 @@
     "worker"
   ],
   "scripts": {
+    "build": "npm run --workspace=schema build && npm run --workspace=app build",
     "validate": "tsx scripts/validate.ts",
     "generate:schemas": "tsx schema/src/export-json-schemas.ts",
     "test": "vitest run",
-    "typecheck": "tsc -b && tsc -p scripts/tsconfig.json"
+    "typecheck": "tsc -b && tsc -p scripts/tsconfig.json && tsc -p app/tsconfig.json"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

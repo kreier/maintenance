@@ -33,5 +33,8 @@ jobs:
       - name: Validate synthetic data fixture
         run: npm run validate
 
+      - name: Build packages and frontend
+        run: npm run build
+
       - name: Generate JSON schemas
         run: npm run generate:schemas

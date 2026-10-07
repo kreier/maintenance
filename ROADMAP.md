@@ -9,8 +9,8 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 | Phase | Title | Focus Area | Status |
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Foundation** | Repository layout, schema definitions, synthetic fixture, seed script, CI | 🟢 **Complete** |
-| **Phase 2** | **Objects** | Physical facilities, rooms, equipment records, stable IDs, relationships | 🟡 **Next Up** |
-| **Phase 3** | **Maintenance** | Events, service intervals, age calculation, overdue alerts, dashboard UI | ⚪ Pending |
+| **Phase 2** | **Objects** | Physical facilities, rooms, equipment records, stable IDs, relationships | 🟢 **Complete** |
+| **Phase 3** | **Maintenance** | Events, service intervals, age calculation, overdue alerts, dashboard UI | 🟡 **Next Up** |
 | **Phase 4** | **Worker & Auth** | Cloudflare Worker, Turnstile, session cookies, roles, private R2 proxy | ⚪ Pending |
 | **Phase 5** | **Documents** | File upload/download streaming, metadata tracking, versioned history | ⚪ Pending |
 | **Phase 6** | **Translations** | Locale fields (EN/VI/KO), review workflow (`HUMAN-APPROVED`), stale check | ⚪ Pending |
@@ -33,12 +33,12 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 - [x] Validation and seed script (`scripts/seed.ts` / `scripts/validate.ts`)
 - [x] GitHub Actions CI workflow to validate schemas and synthetic data on PRs
 
-### Phase 2 — Objects
+### Phase 2 — Objects (Completed)
 **Goal**: Model physical assets deterministically with stable IDs.
-- Define hierarchical relationship: `Facility` → `Building/Area` → `Room` → `Equipment`.
-- Create data views in the static web application to browse facilities and equipment.
-- Implement search and filtering across categories (HVAC, Electrical, Plumbing, Structural).
-- Provide stable deep links to individual object IDs (e.g. `#/objects/HVAC-ROOM2-001`).
+- [x] Define hierarchical relationship: `Facility` → `Building/Area` → `Room` → `Equipment`.
+- [x] Create data views in the static web application to browse facilities and equipment.
+- [x] Implement search and filtering across categories (HVAC, Electrical, Plumbing, Structural, AV, Safety).
+- [x] Provide stable deep links to individual object IDs (e.g. `#/objects/HVAC-ROOM2-001`).
 
 ### Phase 3 — Maintenance
 **Goal**: Compute ages, schedules, and maintenance statuses dynamically from raw dates.
