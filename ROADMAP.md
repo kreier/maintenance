@@ -11,8 +11,8 @@ This document details the step-by-step development roadmap for `kreier/maintenan
 | **Phase 1** | **Foundation** | Repository layout, schema definitions, synthetic fixture, seed script, CI | 🟢 **Complete** |
 | **Phase 2** | **Objects** | Physical facilities, rooms, equipment records, stable IDs, relationships | 🟢 **Complete** |
 | **Phase 3** | **Maintenance** | Events, service intervals, age calculation, overdue alerts, dashboard UI | 🟢 **Complete** |
-| **Phase 4** | **Worker & Auth** | Cloudflare Worker, Turnstile, session cookies, roles, private R2 proxy | 🟡 **Next Up** |
-| **Phase 5** | **Documents** | File upload/download streaming, metadata tracking, versioned history | ⚪ Pending |
+| **Phase 4** | **Worker & Auth** | Cloudflare Worker, Turnstile, session cookies, roles, private R2 proxy | 🟢 **Complete** |
+| **Phase 5** | **Documents** | File upload/download streaming, metadata tracking, versioned history | 🟡 **Next Up** |
 | **Phase 6** | **Translations** | Locale fields (EN/VI/KO), review workflow (`HUMAN-APPROVED`), stale check | ⚪ Pending |
 | **Phase 7** | **Audit & Backup** | Append-only audit records, R2 manifests, admin Google Drive backup | ⚪ Pending |
 | **Phase 8** | **Setup & Forks** | One-time `workflow_dispatch` provisioning, setup page, fork guide | ⚪ Pending |
@@ -50,14 +50,15 @@ This document details the step-by-step development roadmap for `kreier/maintenan
   - [x] Interactive graphs (equipment age distribution, service forecast, facility energy consumption).
   - [x] Interactive service recording simulator with real-time recalculation.
 
-### Phase 4 — Cloudflare Worker & Authentication
+### Phase 4 — Cloudflare Worker & Authentication (Completed)
 **Goal**: Establish the authoritative security layer and connect to Cloudflare R2.
-- Scaffold Cloudflare Worker with `wrangler.toml`.
-- Implement client-side key derivation (PBKDF2 / Argon2id WASM) and server-side HMAC validation.
-- Integrate Cloudflare Turnstile token verification on login.
-- Issue secure, HttpOnly session cookies.
-- Implement role-based authorization (`viewer`, `editor`, `reviewer`, `administrator`).
-- Implement R2 read/write endpoints with strict server-side schema validation.
+- [x] Scaffold Cloudflare Worker with `wrangler.toml` and TypeScript configuration.
+- [x] Implement client-side key derivation (PBKDF2 Web Crypto) and fast server-side HMAC validation (~10ms CPU free tier safe).
+- [x] Integrate Cloudflare Turnstile token verification on login.
+- [x] Issue secure, HttpOnly signed session cookies (`maintenance_session`).
+- [x] Implement role-based authorization (`viewer`, `editor`, `reviewer`, `administrator`).
+- [x] Implement R2 read/write endpoints (`/api/objects`, `/api/maintenance/events`) with schema validation, `history/` archival, and audit logging.
+- [x] Build frontend authentication flow with modal dialog, password derivation, and session state.
 
 ### Phase 5 — Documents & Media
 **Goal**: Enable document and media archiving through the Worker proxy into R2.

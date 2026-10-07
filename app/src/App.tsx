@@ -7,7 +7,10 @@ import { ObjectDetailPage } from "./pages/ObjectDetailPage";
 import { RoomDetailPage } from "./pages/RoomDetailPage";
 import { MaintenanceDashboardPage } from "./pages/MaintenanceDashboardPage";
 
-export const App: React.FC = () => {
+import { AuthProvider } from "./context/AuthContext";
+import { LoginModal } from "./components/LoginModal";
+
+export const AppContent: React.FC = () => {
   const [currentLocale, setCurrentLocale] = useState<LocaleCode>("en");
   const [hash, setHash] = useState<string>(window.location.hash || "#/");
 
@@ -84,7 +87,18 @@ export const App: React.FC = () => {
           </p>
         </div>
       </footer>
+
+      <LoginModal />
     </div>
   );
 };
+
+export const App: React.FC = () => {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+};
+
 export default App;

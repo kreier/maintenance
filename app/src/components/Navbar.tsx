@@ -1,6 +1,7 @@
 import React from "react";
 import type { LocaleCode } from "../types";
-import { Building2, Globe, Lock, Layers } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
+import { Building2, Globe, Lock, Layers, LogOut, Shield } from "lucide-react";
 
 interface NavbarProps {
   currentLocale: LocaleCode;
@@ -13,6 +14,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onLocaleChange,
   activePath,
 }) => {
+  const { user, openLoginModal, logout } = useAuth();
+
   return (
     <header className="sticky top-0 z-30 bg-white border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </nav>
           </div>
 
-          {/* Location Selector, Language, Login */}
+          {/* Location Selector, Language, Auth Button */}
           <div className="flex items-center gap-3">
             {/* Location selector */}
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-700">
@@ -88,14 +91,34 @@ export const Navbar: React.FC<NavbarProps> = ({
               ))}
             </div>
 
-            {/* Login placeholder */}
-            <button
-              onClick={() => alert("Authentication with Cloudflare Worker and Turnstile will be activated in Phase 4. Currently exploring the public Example fixture.")}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold transition-colors shadow-sm"
-            >
-              <Lock className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Sign In</span>
-            </button>
+            {/* User Session / Sign In Button */}
+            {user ? (
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 border border-slate-200 rounded-lg text-xs">
+                  <Shield className="w-3.5 h-3.5 text-purple-600" />
+                  <span className="font-bold text-slate-800">{user.username}</span>
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-bold uppercase bg-purple-100 text-purple-800">
+                    {user.role}
+                  </span>
+                </div>
+
+                <button
+                  onClick={logout}
+                  title="Sign Out"
+                  className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                >
+                  <LogOut className="w-4 h-4" />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={openLoginModal}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold transition-colors shadow-sm"
+              >
+                <Lock className="w-3.5 h-3.5" />
+                <span>Sign In</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
